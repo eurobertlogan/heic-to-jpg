@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-test/
+*.log
+.DS_Store
+.idea/
+.vscode/
+site/
+public/vendor/libheif-bundle.mjs

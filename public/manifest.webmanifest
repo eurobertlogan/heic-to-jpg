@@ -1,0 +1,19 @@
+{
+  "name": "HEIC para JPG",
+  "short_name": "HEIC para JPG",
+  "description": "Converta fotos HEIC do iPhone para JPG no navegador, sem enviar nada para servidor nenhum.",
+  "start_url": "./",
+  "display": "standalone",
+  "scope": "./",
+  "background_color": "#fbf9f5",
+  "theme_color": "#fbf9f5",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "./icone.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

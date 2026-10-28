@@ -1,0 +1,25 @@
+{
+  "name": "heic-to-jpg",
+  "version": "1.0.0",
+  "description": "Convert iPhone HEIC photos to JPG in the browser. Nothing is uploaded.",
+  "type": "module",
+  "license": "MIT",
+  "author": "https://robertlogan.cc",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "vendor": "node scripts/copiar-vendor.mjs",
+    "build": "npm run vendor && tsc -p tsconfig.json && tsc -p tsconfig.sw.json",
+    "start": "npm run build && node scripts/servidor.mjs",
+    "dev": "npm run start",
+    "test": "tsc -p tsconfig.test.json && node --test \"dist-test/test/*.test.js\"",
+    "site": "npm run build && node scripts/montar-site.mjs",
+    "previa": "node scripts/gerar-previa.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "libheif-js": "^1.23.5",
+    "typescript": "^5.9.3"
+  }
+}

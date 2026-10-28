@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022", "DOM"],
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "outDir": "dist-test",
+    "rootDir": "src",
+    "skipLibCheck": true
+  },
+  "include": ["src/zip.ts", "src/formato.ts", "src/i18n.ts", "src/test/**/*.ts"]
+}
