@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HEIC para JPG: converta fotos do iPhone sem enviar nada</title>
+    <meta
+      name="description"
+      content="Converta fotos HEIC do iPhone para JPG direto no navegador. Grátis, sem cadastro e sem enviar as fotos para servidor nenhum."
+    />
+    <meta name="theme-color" content="#0b0b0c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HEIC para JPG: converta fotos do iPhone sem enviar nada" />
+    <meta
+      property="og:description"
+      content="Solte as fotos, escolha a qualidade e baixe em JPG. A conversão acontece no seu navegador, sem upload."
+    />
+    <meta property="og:image" content="https://eurobertlogan.github.io/heic-to-jpg/previa.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://eurobertlogan.github.io/heic-to-jpg/previa.png" />
+    <link rel="icon" href="./icone.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="preload" href="./fontes/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./estilo.css" />
+  </head>
+  <body>
+    <header class="topbar" id="topbar">
+      <div class="container topo-interno">
+        <a class="marca" href="./">
+          <span class="barra">//</span>
+          <span id="marca">heic para jpg</span>
+        </a>
+        <div class="idiomas mono">
+          <button type="button" data-idioma="pt" aria-pressed="true">PT</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-idioma="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="heroi">
+        <p class="mono selo" id="selo"></p>
+        <h1><span id="titulo"></span> <span class="acento" id="tituloAcento"></span></h1>
+        <p class="sub" id="subtitulo"></p>
+      </section>
+
+      <section id="zona" class="zona" tabindex="0" role="button" aria-describedby="soltar">
+        <p class="mono formatos">heic · heif</p>
+        <p class="soltar" id="soltar"></p>
+        <div class="escolhas">
+          <button type="button" id="escolher" class="botao principal">escolher fotos</button>
+          <button type="button" id="pasta" class="botao">escolher uma pasta</button>
+        </div>
+        <input id="entrada" type="file" multiple accept=".heic,.heif,.hif,image/heic,image/heif" hidden />
+        <input id="entradaPasta" type="file" webkitdirectory hidden />
+      </section>
+
+      <section id="ajustes" class="ajustes" hidden>
+        <label class="campo">
+          <span class="mono rotulo" id="rotuloQualidade"></span>
+          <span class="controle">
+            <input id="qualidade" type="range" min="60" max="95" step="1" value="85" />
+            <output id="qualidadeValor">85</output>
+          </span>
+        </label>
+        <label class="campo">
+          <span class="mono rotulo" id="rotuloLargura"></span>
+          <select id="largura">
+            <option value="0" id="original"></option>
+            <option value="2560">2560 px</option>
+            <option value="1920">1920 px</option>
+            <option value="1280">1280 px</option>
+          </select>
+        </label>
+      </section>
+
+      <section id="lista" class="lista" hidden>
+        <div id="progresso" class="progresso" hidden><div id="barra" class="barra"></div></div>
+        <ul id="itens" class="itens" aria-live="polite"></ul>
+      </section>
+
+      <div id="acoes" class="acoes" hidden>
+        <button type="button" id="baixar" class="botao principal">baixar todas (.zip)</button>
+        <button type="button" id="converter" class="botao">converter</button>
+        <button type="button" id="limpar" class="botao fraco">limpar lista</button>
+      </div>
+
+      <p id="aviso" class="aviso" hidden></p>
+
+      <section class="explicacao">
+        <h2 class="mono" id="comoFunciona"></h2>
+        <p id="explicacao"></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="mono" id="rodape"></p>
+      </div>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
